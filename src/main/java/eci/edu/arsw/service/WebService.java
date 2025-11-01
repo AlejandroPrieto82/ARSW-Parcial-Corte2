@@ -48,8 +48,13 @@ public class WebService {
         }
     }
 
-    public Optional<ServerEndpointExporter> conectarseSala(Long id){
-        
-
+    public ServerEndpointExporter conectarseSala(Long id){
+        Optional<Room> room = buscarSala(id);
+        if(room.isPresent()){
+            ServerEndpointExporter ws = room.get().getWs();
+            return ws;
+        }else{
+            return null;
+        }
     }
 }
