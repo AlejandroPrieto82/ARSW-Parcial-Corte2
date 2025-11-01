@@ -1,1 +1,0 @@
-# ARSW-Parcial-Corte2
